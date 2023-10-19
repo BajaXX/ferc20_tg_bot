@@ -1,0 +1,11 @@
+{
+  "name": "ferc20bot",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/BajaXX/ferc20_tg_bot.git",
+  "author": "Baja <baja@jiama.online>",
+  "license": "MIT",
+  "scripts": {
+    "start":"python src/start.py"
+  }
+}

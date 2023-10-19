@@ -1,5 +1,7 @@
 import time
 import telebot
+from telebot import types
+from EventHandler import EventHandler
 
 from tokenHelper import TokenBalanceChecker
 
@@ -61,7 +63,11 @@ def echo_message(message):
     user = balance_list.get(from_user_id)
     balance = 0
     if not user:
-        bot.reply_to(message, "you have no bind address")
+        markup = types.ReplyKeyboardMarkup(row_width=2, resize_keyboard=True)
+        itembtn1 = types.KeyboardButton('去验证FERC资产')
+        itembtn2 = types.KeyboardButton('退群')
+        markup.add(itembtn1, itembtn2)
+        bot.reply_to(message, "you have no bind address!", reply_markup=markup)
     else:
         print(user)
         balance = user["balance"]
